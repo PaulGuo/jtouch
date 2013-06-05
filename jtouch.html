@@ -39,13 +39,17 @@
 
     // 初始化views
 
-    var search = ne.view('search', 'search.html', 'search.handler');
-    var list = ne.view('list', 'list.html', 'list.handler');
-    var detail = ne.view('detail', 'detail.html', 'detail.handler');
-    var order = ne.view('order', 'order.html', 'order.handler');
+    var search = ne.view.create('search', 'search.html', 'search.handler');
+    var list = ne.view.create('list', 'list.html', 'list.handler');
+    var detail = ne.view.create('detail', 'detail.html', 'detail.handler');
+    var order = ne.view.create('order', 'order.html', 'order.handler');
 
-    search.beforeshow(function() {
+    search.on('beforeshow', function() {
         //this.reflush();
+    });
+
+    ne.on('loading', function() {
+        console.log('loading');
     });
 
     // 初始化路由

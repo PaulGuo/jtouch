@@ -22,33 +22,59 @@
 
     jtouch.prototype = {
         init: function(container) {
-            this.views = [];
             this.slider = new PageSlider(container);
+            this.view = new jtouch.view(this);
+            this.views = this.view.views;
+            this.io = new jtouch.io(this);
+            this.events = new Events();
         },
 
-        view: function(name, url, handler) {
-            var that = this;
+        route: function() {
+            jHash.route.apply(jHash, arguments);
+        },
 
-            this.views[name] = {
+        start: function() {
+            jHash.processRoute.apply(jHash, arguments);
+        }
+    };
+
+    this.jtouch = jtouch;
+
+}).call(this);
+
+// VIEWS
+
+(function() {
+
+    jtouch.view = function(superthis) {
+        this.init.apply(this, arguments);
+    };
+
+    jtouch.view.prototype = {
+        init: function(superthis) {
+            this.views = [];
+            this.superthis = superthis;
+        },
+
+        create: function(name, url, handler) {
+            var that = this;
+            var view = {};
+
+            view = {
                 name: name,
                 url: url,
                 handler: handler,
                 show: function(callback) {
                     var _this = this;
-                    var _handler = that.io.push(this.handler);
+                    var _handler = that.superthis.io.push(this.handler);
 
                     seajs.use(this.handler, function(handler) {
                         var view_req;
 
-                        that.io.pop(_handler);
+                        that.superthis.io.pop(_handler);
+                        _this.trigger('beforeshow');
 
-                        if(_this._beforeshow.length) {
-                            $.each(_this._beforeshow, function(i, o) {
-                                o.call(_this, handler);
-                            });
-                        }
-
-                        that.io.ajax({
+                        that.superthis.io.ajax({
                             url: _this.url,
                             context: _this,
 
@@ -61,41 +87,26 @@
                                 _cur.after(_view);
 
                                 window.scrollTo(0, 0);
-                                that.slider.slidePage(_view);
+                                that.superthis.slider.slidePage(_view);
                                 callback && callback.call(this, handler);
                             },
 
                             complete: function() {}
                         });
 
-                        that.io.onend(function() {
-                            //jQT.goTo('#' + _this.name, 'slideleft');
+                        that.superthis.io.on('end', function() {
+                            // 
                         });
 
                     });
-                },
-
-                _beforeshow: [],
-                beforeshow: function(fn) {
-                    this._beforeshow.push(fn);
                 }
             };
 
+            Events.mixTo(view);
+            this.views[name] = view;
             return this.views[name];
-        },
-
-        route: function() {
-            jHash.route.apply(jHash, arguments);
-        },
-
-        start: function() {
-            jHash.processRoute.apply(jHash, arguments);
         }
     };
-
-    Events.mixTo(jtouch);
-
-    this.jtouch = jtouch;
 
 }).call(this);
 
@@ -103,23 +114,32 @@
 
 (function() {
 
-    jtouch.prototype.io = {
-        queue: {},
+    jtouch.io = function() {
+        this.init.apply(this, arguments);
+    };
+
+    jtouch.io.prototype = {
+        init: function() {
+            this.queue = {};
+            Events.mixTo(this);
+        },
+
         abort: function() {
             var that = this;
 
-            $.each(this.queue, function(i, o) {
-                if(o.hasOwnProperty('abort')) {
-                    o.abort();
+            $.each(this.queue, function(uuid, req) {
+                if(req.hasOwnProperty('abort')) {
+                    req.abort();
                 }
 
-                that.pop(i);
+                that.pop(uuid);
             });
         },
 
         push: function(req) {
             var uuid = new Date().getTime() + '_' + parseInt(Math.random() * 1000);
-            this.queue[uuid] = req;
+            this.queue[uuid] = req
+            this.trigger('loading');
             return uuid;
         },
 
@@ -127,11 +147,7 @@
             var _delete = delete this.queue[uuid];
 
             if(!this.length()) {
-                if(this._onend.length) {
-                    $.each(this._onend, function(i, o) {
-                        o.call(this);
-                    });
-                }
+                this.trigger('end');
             }
 
             return _delete;
@@ -157,11 +173,6 @@
                     }
                 })
             );
-        },
-
-        _onend: [],
-        onend: function(fn) {
-            this._onend.push(fn);
         }
     };
 
