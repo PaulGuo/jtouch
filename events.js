@@ -1,4 +1,4 @@
-define(function() {
+var Events = (function() {
 
   // Events
   // -----------------
@@ -158,4 +158,4 @@ define(function() {
   }
 
   return Events
-})
+})();

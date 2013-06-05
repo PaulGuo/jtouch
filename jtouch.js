@@ -60,6 +60,7 @@
                                 _view.removeClass('current');
                                 _cur.after(_view);
 
+                                window.scrollTo(0, 0);
                                 that.slider.slidePage(_view);
                                 callback && callback.call(this, handler);
                             },
@@ -91,6 +92,8 @@
             jHash.processRoute.apply(jHash, arguments);
         }
     };
+
+    Events.mixTo(jtouch);
 
     this.jtouch = jtouch;
 
