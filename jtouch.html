@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="zepto.min.js"></script>
+    <script type="text/javascript" src="sea.js"></script>
+    <script type="text/javascript" src="jhash-2.1.js"></script>
+    <script type="text/javascript" src="pageslider.js"></script>
+    <script type="text/javascript" src="jtouch.js"></script>
+    <link rel="stylesheet" href="css/pageslider.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<style type="text/css">
+    .page {
+        background: #fff;
+    }
+</style>
+
+<div class="fullscreen">
+    <ul>
+        <li><a href="#search">search</a></li>
+        <li><a href="#list">list</a></li>
+        <li><a href="#detail">detail</a></li>
+        <li><a href="#order">order</a></li>
+    </ul>
+</div>
+    
+<script type="text/javascript">
+
+    // 初始化应用
+
+    var ne = jtouch.app($('.fullscreen'));
+
+    // 初始化views
+
+    var search = ne.view('search', 'search.html', 'search.handler');
+    var list = ne.view('list', 'list.html', 'list.handler');
+    var detail = ne.view('detail', 'detail.html', 'detail.handler');
+    var order = ne.view('order', 'order.html', 'order.handler');
+
+    search.beforeshow(function() {
+        //this.reflush();
+    });
+
+    // 初始化路由
+
+    ne.route('_', function() {
+        ne.views.search.show();
+    });
+
+    ne.route('search', function() {
+        ne.views.search.show();
+    });
+
+    ne.route('list', function() {
+        ne.views.list.show();
+    });
+
+    ne.route('detail', function() {
+        ne.views.detail.show();
+    });
+
+    ne.route('order', function() {
+        ne.views.order.show();
+    });
+
+    ne.start();
+
+    this.ne = ne;
+
+</script>
+
+</body>
+</html>
