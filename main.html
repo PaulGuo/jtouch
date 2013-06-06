@@ -1,0 +1,172 @@
+
+
+<div id="tbh5v0">
+    <link rel="stylesheet" type="text/css" href="http://a.tbcdn.cn/apps/et/trip-html5/apps/ne/lib/less/trip-min.css?t=91a8457245d841402a8da84f8ae618b8.css" />
+    <div id="innernav" class="screen-wrap fullscreen">
+        <header>
+            <div class="c-inav">
+                <section>
+                    <div class="back">
+                        <span><em></em></span><a href="javascript:history.back();">返回</a>
+                    </div>
+                </section>
+                <section class="J_headerTitle" tpl-ref="#J_headerTitleTpl">
+                    <span><!--机票列表--></span>
+                </section>
+                <section>
+                    <div class="other J_headerButton" tpl-ref="#J_headerButtonTpl">
+                        <a href="javascript:goHome();">旅行首页</a>
+                    </div>
+                </section>
+            </div>
+        </header>
+
+        <div class="c-tab listing-tab J_listingTab ">
+            <ul class="tab-3">
+                <li><a href="#search" title="">机票查询</a></li>
+                <li><a href="#cheap" title="">特价机票</a></li>
+                <li><a href="#checkin" title="">在线值机</a></li>
+            </ul>
+        </div>
+
+        <section class="content search ticket-form  J_searchConditionTab">
+            <form action="">
+                <div class="input-fields">
+                    <label for="">出发城市</label>
+                    <input id="" class="c-form-txt-normal J_CityAutoComplete J_searchDepCity" name="" type="text" placeholder="输入汉字或拼音"/>
+                </div>
+                <div class="input-fields">
+                    <label for="">到达城市</label>
+                    <input id="" class="c-form-txt-normal  J_CityAutoComplete J_searchArrCity" name="" type="text" placeholder="输入汉字或拼音"/>
+                </div>
+                <div class="input-fields">
+                    <label for="">出发时间</label>
+                    <input id="" class="c-form-txt-normal J_searchDepDate" name="" type="date" />
+                </div>
+                <input class="c-btn-oran-big J_searchConditionSubmitBtn search-btn" type="button" value="查   询" />
+                <span class="search-tips">淘宝旅行承诺已购机票100%出票</span>
+            </form>
+        </section>
+
+        <section class="content cheap hidden J_cheapFlightListTab">
+            <div class="flight-info J_cheapFlightTitle" tpl-ref="#J_cheapFlightTitleTpl">
+                <!--当前城市：北京 <em class="count">共21个结果</em>-->
+            </div>
+
+            <ul class="c-list-group J_cheapFlightList" tpl-ref="#J_cheapFlightItemTpl">
+
+            </ul>
+        </section>
+
+        <section class="content verify-code hidden J_verifyCodeTab">
+            <p>为了您的账号安全，请输入验证码：</p>
+            <div class="verify-code-content J_verifyCodeContent" tpl-ref="#J_verifyCodeContentTpl">
+                
+            </div>
+            <input class="c-btn-oran-big J_verifyCodeSubmitBtn" type="button" value="确定">
+        </section>
+
+        <section class="content listing hidden J_flightListTab">
+            <div class="flight-info J_flightListTitle" tpl-ref="#J_flightListTitleTpl">
+                <!--2012-6-15, 周五, 北京-上海 <em>(共21个结果)</em>-->
+            </div>
+
+            <div class="pulse-tab J_sortArea">
+                <ul class="tab-3">
+                    <li class="time J_sortTarget">时间<em class="arrow" data-type="time::asc" data-type-toggle="time::desc" data-content-toggle="&darr;">&uarr;</em><span class="up"></span></li>
+                    <li class="price current J_sortTarget">价格<em class="arrow" data-type="price::asc" data-type-toggle="price::desc" data-content-toggle="&darr;">&uarr;</em></a><span class="up"></span></li>
+                    <li>
+                        <a class="btn c-btn-grey-small J_filterDoor" href="javascript:void(0);">
+                            <span>筛选</span>
+                            <span class="arrow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="c-list-group J_flightList" tpl-ref="#J_flightItemTpl">
+
+            </ul>
+
+        </section>
+
+        <section class="content details hidden J_flightDetailTab">
+            <div class="flight-info J_agentTitle" tpl-ref="#J_agentTitleTpl">
+                <!--2012-6-15，北京-上海</em>-->
+            </div>
+
+            <div class="plane-detail-info J_planeDetail" tpl-ref="#J_planeDetailTpl">
+
+            </div>
+
+            <div class="c-pnav-wrapper">
+                <a class="down J_dropDownArrow" href="javascript:;">
+                    <!--箭头-->
+                    <div class="J_dropDown" dropfor=".J_detailDropDownHidden">
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+
+            <ul class="c-list-group J_agentList" tpl-ref="#J_agentListTpl">
+
+            </ul>
+        </section>
+
+        <section class="content online-checkin hidden J_onlineCheckin">
+
+        </section>
+
+        <section class="content hidden J_throwException">
+            <div class="c-msg">
+                <section class="c-msg-img warn"></section>
+                <section class="c-msg-info J_exceptionContent"><p>亲，服务器超时，请稍候再试</p><p>&nbsp;</p></section>
+            </div>
+        </section>
+
+        <section class="content flight-details hidden J_flightDetails" tpl-ref="#J_flightDetailsTpl">
+
+        </section>
+
+        <section class="content J_loading">
+            <p class="c-loading"><span></span></p>
+        </section>
+
+                <section class="mobile">
+            <h4>方便您的旅程，手机客户端下载：</h4>
+            <a href="http://itunes.apple.com/cn/app/id453691481?mt=8"><img class="app_store" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQUAAABKCAMAAACFMbGuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATVQTFRFsrS2cnV5v8DBb3N4cXR5tbe5qKqtcnZ5foGEdHd60dLT4+Tlc3Z6kZOVo6Wnu73AcXV59vf35ebn9fb29vb22tvccHR4eHuAi46SnqGk7OztrK6w4uPkxcfJb3N3lZib7e3t7u7vgYWJh4qNz9DS2NnbdHd7yMnKmpye7Ozs29zdf4KEl5mckJOXc3d6iIuP2trbcHN4rrCx39/gc3d8iIuO1tfZeHt+fYCDl5qdsbO1yszN8fLy5OTldXl94OHifH+ElZia/f39cXV6cHR5goaKlZicu72/2dvc3d7eeHyB8PDxt7m8zM3PjZCU39/h09TV7O3tgYSJd3p9d3p/cXR4en6CjI6R+Pj59fX1yMrM/Pz82Nna8/P0vL7B+vr6ra+yubu9n6KlbnJ3////dXh7////xpEe0QAAAGd0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ABQWungAAAk1SURBVHja7JwHt+I2FoBtI4qxDZ5gMGAIBF6dmplMzyaburvJ9t6r5fn/P2F1dSVbciGeoZyB93TOzHvI8tXVp9sseBhvoH0ceb9PbmDzoo/5+g327/p+cnPb/Wuk8Mm95Ca3e58AheubDYFhuGYU7ic3vd1/Y9xNbttd48kthOSJ8ays22zEVa3hX5wchWfGixIGT19/Rqvab//7vX9qFF4YxT7/Vx/RTe3Oq5PDUKTQfnSHbm5f/cQ/eQrffEZ/qP3z81On4P6P/nB7bZ44hT9+WoPC3ccnTqHx4xoUfvRhiaiAemUzdOlV0qTN9HWHdtMrXn1Fs9vUxgV3QaXhumLIu1H4oAaFO3FRUkSpVTaDwxTdksLQqaJgQW+XXlpDunwvKAyDYFk2Q8/qbEshqKSwtjwhx6FX7wGFNR1e0h5bNFdlyRS7ZAMj2C4PKayHlC49tpzhkBswat+B3p4kBMZ9mXApSyrQ9WBGp0MduA2ORhy8Ha81hZwm7WVDInazA0KdgEl01rlpalL45beVFfT4eTkFttAIAKxpwBRl9tmkXYvSdUahS60ut1saMAN20j1kw4KO9J6h5cA62MqH7O4r3O9gaTXZbUtryeSsA5Dj5ClcAgUxBJzzkt/NgLG5hrlp6lH499cPK43H/VM5hSVbcADTDJlFwKo9D+wgyihEHVBmzXRFA+baR7D10mEivpEgqQfLtKQfoUcw4WBol2Bg0plSChG7nA5ZAoAmSHaYMp0g0KepSeGjDzf4UFxK4YrtMgMAi2UTwkIStglg1JlHsG1mBDp8qdAD2lvoYpaIdRG/1MPV9WS4RQpD+M+B7YXWUymwFvTSIR26lHc5AbewjjbN/iiIaUDdYOmhDYIxZhQ6AbNXByh0NQpdi7WeEHK1gUJXUoAbrLVK4dKykmwIcs5RUKbZH4Ul1w2CIlMKnMIDIk2FQhPWNAQKS1FFdKWVaNmfX9pAYYjRIh8XFAoJT1a4FYJCtTPskkIPw5UFerPItgQlnI4XaBS67B9Q4PFridpfgSlHImx5/AVcylFg19MlNiHmW84mCmwfICk0MwraNHuj0EXWHt/ngGuP/qt5BMW4IP1axHaK2Q2NATzcy1Po8kwploiCrU0U1nxIN8ko6NPsi0LT6oifEOrRaS2r6bGiBqom+MmioxVF7IUVNdGtI35Tj3WncjyLezhWQ+vUj5mohI+ymnwSy1OrpkhMrg/h9zabUiltmn3FhVN7mrqlcEvhlsKOKLgjeNIgO1DLJPjU4tvHR2F0Bvlo4m6rFImNPk+nA2NMLo6NQshVPxttp5I7MpSH+D6aljnaiY0dgIIptA+3gxCea2cZrTY3jjP+yxFQaMxQb2OrE2p0K2YEhnEmKcTyl/efgj0WuzdrbGMKCyQZE5N5gXF0FHyIaAPQd7xFZOdSaEsEAbIyQNgRUYiBgAH/9bd4B28EUWGQyrdNOzkmCu6ER8YzdREE6wcXsz+xN/WqFDSfgmGcglKMpPWEq4q04QemVvzsQcM8NAUe1c5HE7VkQO3JArO/TP7lvSoFunLzgUI0PrGf1ROLkZuJXM1FaiWhwSP11AjJYSmEmB7CgVIyoHJ9Jfnblb1aXDhvtCspXJDJIOs4X/lSZB+7VzZpZdcn5JAUsFgIRaILFQpTZRFzUtmrL3o2lmgKFEhfqycGY1OIFG1F5ur1iX9ACrxYOB+J8CBKhlS5viE0m7SrevP1wjxET7FXhsEJn7GfBkmIqM3mhoEkp2Em8pxdXBnCW3ikpoPwcBSwWIDFc5cQ4U0oN2fJn2BJCBfKe7PacSYhIQfbNNGHTNYYlPRms7Hg6zR8KXIygtSKnbHvx/2aRdyuKKA7r2y5l1gyxIrfu42puFDem7Z2I7XofkOxKcyUOJEIJT5nz1ISimSWktg4AH5NLrgu08bBKMSpBaBLYMmAEaCBOcCUvlLeq9gVWUhzmC5IjgKfSN4sYsTYjmmaoPmAcwzP7ljuzUEoqNGAu4TQiKo1VCwqqvJetbUbE8mhRTQK6BApNHTEVjsTKQbIt1XhxcI9EAV0gxXOnJ0y6DUfD6AsH5T3JhUcJqYqBzNGtq4YocQpGz2l0HpF544ohIWpecmgr5cXRAUKsjcpchhQ4dZ5CpmN87AiKCgDdkHhL99Ue9LDz0somEbxMw5h0RampbYwLacAsW8gNj6/yCyY4sPLXijQfz2t/PzCHz4toSBPFtRmmHkKoRodC71lGIzCHbjI7FAvpKUU5obSxu8WHd/2sywYo2bptH2tMpCRz2yJBZT3pnZlF4sQhVuoFZttcXd+gGEqzU4OQkGcCaTT6pXBIORLtLFXFnqF3tS5Vmm+QEJsccoi0ezGaDs2f8WqQ3XAlG+BLaNLnfPKnVDgzjkIc2FC5kT2aGSmtRAEzfLeNEwM4JwJluiHGs0+cUfsCpc9XUHZ1B7NaSHU4JbMeb3VJuMZjXdB4fmctd9sooDFghLgMGenJR2dtuJYJL6xm1T0qsGyD/l+ZaQ5Ag1mwnJwLH6nBkvLLV5+D1a2SkGU2DMQ0ZrLh/EtKfx0RFgb/WIDBSwW1NoEDwmEu2ohkyT6A2DWq1JQGxh/9pQYJ+Y4N2Dh62GY5BLWLig8eKidrJZRCKl2SJYGrbNR/hm6T8qet/ukEGOy52ZeQmfTw5P1YlAYoKUdHUOdt0fqUnhUTSGNAvlIQUNUTio1nahnTfle0S7IOOPAQgSKJRPx5AxL8kPlhCb0k0JhQhbpWxqzych9BwqPf12DgvY5aHcB2VF/ZPEn0CcokJjnz5U8BSzvVR6m4hVm3Dj2lTftWBNLuiAxn9NYiFNGtv1aXcDCqJDQqHVkW6BA/laDgv6ZeLckKfO+dIv0tF3eq4HAjKvXp6y5unzldUFUiYS3oOC+0im84jO5D7TO/9QUX36Cvu9z9R2cxOf/NOAfXzRY++K52vfzp8mpU2h/+1fdGmasfaV2/P2BefIUEv93dzcWjh88qv3W0xFTSNzHrZ9VMpi9/rq+/kdD4WVZb3tU/be1b/O2/JFQeGH8eZ/ij4TCs/3+tTkpPeQg9Y4+Dtee7PmbB8rronpHH4drd2+/hYJ/C8Wb65c3HMLL69tvp0nufSe+qejLGwzhS/FNRfitVTcSgfzWqv8LMAB9ob/6F96L+gAAAABJRU5ErkJggg==" alt="" /></a>
+            <a href="http://download.taobaocdn.com/nbdev-client/client4trip/trip.apk?spm=0.0.0.0.3ko4dT&file=trip.apk"><img class="android_market" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQUAAABKCAMAAACFMbGuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAwBQTFRFtcxrrcdapcFKob5BzOCLosYx1eSkz+GWn8Um+fvyt9Fi7fTY4ey+q8pI8vfixdx9udRgo8Y1o8Yz5/DLw9l8oMUppcY65fDF+fvxrM1DocUsyd2JocUv8/flpMY4osUwstFRytqTsc5Vn70+/v792eioocUupck07PPUk7UloMUq0uSapMY3o8Y0+fvz0+Cl1OKplLYlocUt3+y32+ix9/rvmbssmLgun8Unnbs5vdVvv9hu/P349Pfpo8Q4n8Aznb8xmrstmLkq8vfjpMU6ocI2nr8ylLUnu9Rro8Y2q8pJo8Q51uKr7/TekrQkoL0/+vv1lbYovtN9nsAynLs4osM3uc9y1eKq3ui9y9uXnL0vyt2M///+n8E0nb4xmLormrwu+Prx1+Sv5/DK6PDM1+Ouk7Um2OSwnb4w/v78mrkz9Pjp7vTdss5XmbosqslHsspklLYmmLgwr8hf+Prw6vLRl7gt2+a3nL4wmrwtnsAzlbYq/P35p8dAm7wum70uocM26vHW5OzJqsVUnr08ydqSk7Uk3+m/zd2a8fbj6/HX+vz2wNSAnbw5wtWEl7csmLoqyNmQ9fjqoME0+fv0utNpwNN/o8BG6vHV1OGom7o2osM49vnunLs3m70v3ui8oME1+/z2p8NO8/fnn8A03+m+utB00+Gmlrcs0N+h2ua1l7gpzt2d0N+gu9B1x9iNlbcn6/HWzdyZ3Oe4psc98/bm/f78p8JMor9EuM5v8PXhs8tlmroztM9bmLgv8vbk1uOtl7kqpMU5w9aFs8tmz96elrcr5+7Olrco9fjrocM3osQ40N6f6fHP2uW0mbkx8/fo6fDTtMtn3+m97/TfpMY6uM5w+/z30eCjytuV4OrB4erD4uvDvtJ7t85uvNF4r8hdn709sspllbYp9vntwdSClbcmq8VV5O3Knrw76vDU5+/Qsspjtcxpsclh0+Gnlrgo/P36l7kp8PTg7fLa7fPb4uvFr8hezNyYxdeKt81t9vns6O/R////pcY7////0IuF0QAAAQB0Uk5T////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AFP3ByUAAArDSURBVHja7JwHeNvGFYCVBAS3KIkURYmkyDKRqOm0kqyoUqthLduKPFqrrh3PDMd27HjGju16O2lWM5u9V5O26d5777333nuPtDk47727A8AF8ftiyQqp+z4JwOEG3o+3DiBZchLLRWHXO7UiLK7wRSR/CfwNzteKt8wf5BSuWKgVc1l4BVIYLG4IgGEQKMzXir3MP1lysTZbLi65YBaCdkHJ1lkI2taSgznP9Y5k1vX1FiKFgyW5IfzszevS6w79eHFBYshN4Qtnfec3fWmacOaS904UFwVt3X+PvRG3YxPDwxNjuPf3H949oBUZhd6dl/28f/W+Rfff+cgjdy5btG/1yK7d9xwpNgrayhuv27z9i3fN3cTYpt1HX/+BzX94+rBWdBT6Nz/6KDOVr/7//jWWgzmZK1u1h3VrdmbXj73Mo59x5X+pRre0Ys96wunMrItGvWIxmdolN4WxgV1vO4ellFX/3D5gESPCjKnZ6t1A4DlS8LstKESZ05sXBS+T8+VL4cjAVatYZlmxaDj3pTqd0Wz1AdX7XCk4LSh0M6dpcEtdsMt2eVLoXfQXlrUsb7w3R5cE83ewAAhNM0RBwA5oH9Y0FXaJQsLPWNQF4vhhx58QFLxYG5CEPNCnQ6NRokxIF8CJ3V7mxm4og5t356WDhZmbdM4Jnd0JPo8fKajMw2DjgmOnnVrgaNDbkx+FgRU485J3mwFsei3+fypXsARBwzh4giZmUbRXlbGEQcHDVA/Ug2I6VT9eOVFwYzOp027mV90oKkjuh97dxFd1RlU7dIuqURgn4cRx3KabHiWdAulgWD8fxMmIAuug9h6V9AUpwFEH3J58KFz5RxT4mcVnzDEgLPnpic/g9pNX5jLPBFwRSOMHjUCpXS68jrBBIezFK0xw83SDhEghjLdeGkyY7jWOFEAxVanq3CJgcFS0DlQw3Ziwv50ckhvm9QITGqSbU1BJWez8thAFOrLnQ2Fo5/tR3nMHfv0Pg8K7dgw8gdtrPzyU3TyjCMDOrwsF0eDOoFIbFgG3GQh4SVSsQVFUPjr3qwgNTwVAXDsqhGqm4Md/brznWIQR+aELzc313c28fBBuEd1UlaB2XmpBR3n5hY2/onmuv+bLZovY+3auGU9nVQYhDV6uM+riiokaalDwOkGl3UjBk0LBo0IJiEG6LSh4JAXsoHLHAINKJgYFl07BJenAXIKCM0/vOHRgnFmUb/7iW1kNAi+NLNTD0ChcSMRuokB660cKUZFFeKSWmHyLOGVBwc+9hezhh2nJ2xkU7MI7cQp++h8VBNx4FM6DwvBxZln+81CWcMjdFVkieLYo8nZ7Xc4UCh74QwpwEMYmSAEMOKCFhXd00QGeSqMA53UKdgwEqlu60wBphNOrUwhgIPIbFKh9h+SkMr83Ec2DwspbrCncsjJbgmjnYkQpieTeiqX4BaG8SEHoMLk4jKfkKfitheJ0pVPwUKQUFPjAqsSmTy8pYGscRVLQ/DzScgpeflmTU1j7BmsKl16eJU6qXrFFv82NVlXtLtVFWRNuwTuq4TAcqGE7N+swdQpAtT6OC/SbR0fqIPMIGEqjVqqdJlFFhEiIri5oabcb86suPAqIiwqr1E1kTdjbNGMWCmPDkCJ/7PurzrEoq149D9Kq4bFCXU31Hl52/OyBzz+2bPHZFmXxstUT+353fNmh3sKksGHFL9mcJ27qK3mBZSnp+/R317P7rhn9eCFSWHMDmf2b1u619gt71z5F27esLEQKb/0XCTdnz3JrCudvuJW21+4oRAovuoyE+9trXmhN4dw9S2i7vrEgKbyUhHvJiyejcB5PpefOUpilkI1CxEElYqqqaMqoyl2COEAkmFfbFltwZlKo8PFzPa1GXVMDVZWV53MlNgWaKrY8WtZG4koyOKMpNMeMOxZnU0Eh1tXMWHXtjKYQ6kqV69RT6AqxGU/BJLMwiFNNwcGeBxR0k5AGUZQUSivTDKIoKbB4i8kgQiYKQVuNiKaiohWPI/VYVd9iokBBt1IAqaDzjvoKPSAThXwD8GmgUNpgmERtNexXleoUaiNJpYr3V8raFmBVDR7H67CqLm5QiJQZOlXR5KPzrM7XVJECO08VOx0UUJKGJpOG6xQWtDWbRmhvq5UUSkWeoVOIkT8JxQlIvEHv0xCPPE8oxA2TIINI6hTa2lOGaI5ICjLASgqxeIggoEbF4imdAMx0UOBryldNuqY8j97Vsd0ZFCobpFpzg6iUFMTVVymK8JmY/AkKIaUdzEhQMENoSYY4MtGpNBlsifN9qDqFDjKFwo6PcAofnITC8qVzaXtfJoVmaRJcKJ0Cd5XxGpst4lBkps0pNCRjbY5ILe/AIZRWk2+pJ5egOCLQiSgqMVhCcO9os9VOkXdc9ykS7hvzLrGmcMnad3AanRkU4jKMcYOQFIJJrPeRbEE65auQFMoqTH5EQKD4ECRVUPgKK+KTielUR8p7v/JvmOD3Z3VeaE3hws4Tz8Dm2D3DGRRIbDAJEruqxqAApkBLoKDNVtMuzIYoyJSbKNSZIGitPXjgkCUkXM5UU9D6Nnz9E+97cmRyCiMH/nfjn0bNHwQUFGLCJISV6xYBwkPBlbbC46VOob0tLcliZbb0Gr2gBk05BU17bOP+Ie3ySyd9KzPUtzH1w5CCAk+bk0ESMBmsNPKFWJdPMcKeQaGuPl1myYW7hZSCvaaBApXOyfxCZ2YfQUETJsENQjN0IdITypAnBwXhP043hZGfWFO4YU1uCmQSVTUi+OsUIkoWebJQCFGcrG7VKTQo5oJDTReFoQM/sIJwbM9QbgrCJNp5SiApUPaAIoMkDkdVTgqlcWJRVYNxgYC2t9lMpVybPgpa301XHR3fcqv4JM/4+PgW8VmJz20Zv+57O/u03BT4QxCFG4ROgd9oxVEPkvBImZ2CYuPRU4np2pGslY+YxCPMaaOgjT2waOno67jkj48uXTr6Ub5/x+jSxgd6NSsKdAdDQk5JgZS7vY0if6yMWVBoreY2USEfUDTztWNrUi5Pp48C5iz7v80lf/DmYLBTvK36UX+up546hfIyZuTIKRQamsDcW+vLQlYUtBhliQ1NsjfztUG+YWuqkmNOKwXt5a/g0rxyHkSN8/n+y/q1yShwk+AGkWYRVWUOR0+d8UgqKwWx7lJABWx88dEO3XiQpbYOblxT9nzh1FCINetBIMM7mtfWuSgsIJtgaBNpC9HSZItBmTKomUtBmAS9McgdKTFxzk5Bi/VIm1hgWnvrmbVEk9e7i9NGgd8sMghz1uTTs6Zmn3g8kIOCtAkbPpPzlerdxDO4BdU8BZUdZxIFXPgrXIhYD+Y3rVw0RT4IiHX1UOITd0QitG0BcrCVL7PKy0RWBHLS2oufsFVWU7ceWHzrL/56FL3tVFMYEZESP8XUKSPlGot3h5gL8Kgm8huxiJJX30qJT4uoRROvgK3+Rq9c78UbyBO1NvORMVL5tHjHh87gkuN3pQ6v4Pt/vk0rxGL1XZnR39KTp/cc0bSJMx/G/bueHCpMCttyn9t/4sH1Dx/dTt+qPLTra9evf3xxf0FCOFjyIYuzt93cePVnheAjf726cd7qgoSgbZ39trmG3zaf/eUB/OWB2V+hwF+hODm4rcghbBuc/XUabeGXxC8V3V7EEG4Xv1TEf7WqKBHIX616VoABANbE3vsgKV31AAAAAElFTkSuQmCC" alt="" /></a>
+        </section>
+
+                <script type="text/juicer" id="J_loginUserInfoPanelTpl">
+            <span><a href="${leftHref}">${leftContent}</a></span><span><a href="${rightHref}">${rightContent}</a></span>
+        </script>
+
+        <footer class="footer">
+            <section class="footer-t">
+                <p class="user-info J_loginUserInfoPanel" tpl-ref="#J_loginUserInfoPanelTpl">
+                    
+                </p>
+                <p class="gotop"><a id="J_GoTop" href="#">top<b></b></a></p>
+            </section>
+            <nav class="footer-l">
+                <a href="#" title="">标准版</a><a href="http://www.taobao.com/index.php?from=wap&sprefer=pmm302" title="">电脑版</a>
+            </nav>
+            <p class="copyright">&copy;2012 浙B2-20080224<a class="cr-sv" href="#" id="J_service">客服</a></p>
+        </footer>
+
+<!--#include "include/footer.html"-->
+    </div>
+
+    <div id="leftCate" class="none">
+        <!-- 分类筛选 -->
+        <div id="swipeTop" class="c-tcate">
+            <div id="swipeTopCont" class="c-tcate-cont">
+                <div id="swipeCont-1" class="c-tcate-cont-div J_leftcateContent" tpl-ref="#J_leftcateTpl">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

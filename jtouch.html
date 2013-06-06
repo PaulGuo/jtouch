@@ -45,6 +45,7 @@
     var list = ne.view.create('list', 'list.html', 'list.handler');
     var detail = ne.view.create('detail', 'detail.html', 'detail.handler');
     var order = ne.view.create('order', 'order.html', 'order.handler');
+    var main = ne.view.create('main', 'main.html', 'main.handler');
 
     search.on('beforeshow', function() {
         //this.reflush();
@@ -78,6 +79,10 @@
 
     ne.route('order', function() {
         ne.views.order.show();
+    });
+
+    ne.route('main', function() {
+        ne.views.main.show();
     });
 
     ne.start();
