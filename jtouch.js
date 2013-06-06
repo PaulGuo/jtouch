@@ -86,13 +86,18 @@
                             var _view = $(resp);
                             var _cur = $(that.selector);
 
-                            _view.attr('id', this.name);
+                            //_view.attr('id', this.name);
                             _view.removeClass('current');
                             _cur.after(_view);
 
                             window.scrollTo(0, 0);
                             that.superthis.slider.slidePage(_view);
                             callback && callback.call(this, handler);
+                            
+                            if(handler && handler.trigger) {
+                                handler.view = _view;
+                                handler.trigger('load');
+                            }
                         },
 
                         complete: function() {}
