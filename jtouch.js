@@ -74,6 +74,23 @@
 
                 seajs.use(this.handler, function(handler) {
                     var view_req;
+                    var view_display = function(resp) {
+                        var _view = $(resp);
+                        var _cur = $(that.selector);
+
+                        //_view.attr('id', this.name);
+                        _view.removeClass('current');
+                        _cur.after(_view);
+
+                        window.scrollTo(0, 0);
+                        that.superthis.slider.slidePage(_view);
+                        callback && callback.call(this, handler);
+                        
+                        if(handler && handler.trigger) {
+                            handler.view = _view;
+                            handler.trigger('load');
+                        }
+                    };
 
                     that.superthis.io.pop(_handler);
                     _this.trigger('beforeshow');
@@ -81,25 +98,7 @@
                     that.superthis.io.ajax({
                         url: _this.url,
                         context: _this,
-
-                        success: function(resp) {
-                            var _view = $(resp);
-                            var _cur = $(that.selector);
-
-                            //_view.attr('id', this.name);
-                            _view.removeClass('current');
-                            _cur.after(_view);
-
-                            window.scrollTo(0, 0);
-                            that.superthis.slider.slidePage(_view);
-                            callback && callback.call(this, handler);
-                            
-                            if(handler && handler.trigger) {
-                                handler.view = _view;
-                                handler.trigger('load');
-                            }
-                        },
-
+                        success: view_display,
                         complete: function() {}
                     });
 
