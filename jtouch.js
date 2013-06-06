@@ -137,7 +137,7 @@
 
         push: function(req) {
             var uuid = new Date().getTime() + '_' + parseInt(Math.random() * 1000);
-            this.queue[uuid] = req
+            this.queue[uuid] = req;
             this.trigger('loading');
             return uuid;
         },
