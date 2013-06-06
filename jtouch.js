@@ -67,6 +67,11 @@
                 var _this = this;
                 var _handler = that.superthis.io.push(this.handler);
 
+                that.superthis.io.once('loading', function() {
+                    console.log('the loading');
+                    iLoading.show();
+                });
+
                 seajs.use(this.handler, function(handler) {
                     var view_req;
 
@@ -93,8 +98,9 @@
                         complete: function() {}
                     });
 
-                    that.superthis.io.on('end', function() {
-                        // 
+                    that.superthis.io.once('end', function() {
+                        console.log('the end');
+                        iLoading.hide();
                     });
 
                 });
@@ -172,6 +178,16 @@
                     }
                 })
             );
+        },
+
+        once: function(event, handler) {
+            var that = this;
+            var proxy = function() {
+                handler.call(that);
+                that.off(event, arguments.callee);
+            };
+
+            this.on(event, proxy);
         }
     };
 

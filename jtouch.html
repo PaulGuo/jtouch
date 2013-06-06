@@ -12,6 +12,8 @@
     <script type="text/javascript" src="jtouch.js"></script>
     <link rel="stylesheet" href="css/pageslider.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="http://a.tbcdn.cn/apps/et/trip-html5/common/widget/iloading.css" />
+    <script type="text/javascript" src="http://a.tbcdn.cn/apps/et/trip-html5/common/widget/iloading.js"></script>
 </head>
 <body>
 
@@ -49,11 +51,11 @@
     });
 
     ne.io.on('loading', function() {
-        console.log('loading');
+        //console.log('loading');
     });
 
     ne.io.on('end', function() {
-        console.log('end');
+        //console.log('end');
     });
 
     // 初始化路由
