@@ -78,7 +78,7 @@
                         var _view = $(resp);
                         var _cur = $(that.selector);
 
-                        //_view.attr('id', this.name);
+                        _view.attr('data-view-name', this.name);
                         _view.removeClass('current');
                         _cur.after(_view);
 
