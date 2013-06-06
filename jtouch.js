@@ -60,46 +60,44 @@
             var that = this;
             var view = {};
 
-            view = {
-                name: name,
-                url: url,
-                handler: handler,
-                show: function(callback) {
-                    var _this = this;
-                    var _handler = that.superthis.io.push(this.handler);
+            view.name = name;
+            view.url = url;
+            view.handler = handler;
+            view.show = function(callback) {
+                var _this = this;
+                var _handler = that.superthis.io.push(this.handler);
 
-                    seajs.use(this.handler, function(handler) {
-                        var view_req;
+                seajs.use(this.handler, function(handler) {
+                    var view_req;
 
-                        that.superthis.io.pop(_handler);
-                        _this.trigger('beforeshow');
+                    that.superthis.io.pop(_handler);
+                    _this.trigger('beforeshow');
 
-                        that.superthis.io.ajax({
-                            url: _this.url,
-                            context: _this,
+                    that.superthis.io.ajax({
+                        url: _this.url,
+                        context: _this,
 
-                            success: function(resp) {
-                                var _view = $(resp);
-                                var _cur = $(that.selector);
+                        success: function(resp) {
+                            var _view = $(resp);
+                            var _cur = $(that.selector);
 
-                                _view.attr('id', this.name);
-                                _view.removeClass('current');
-                                _cur.after(_view);
+                            _view.attr('id', this.name);
+                            _view.removeClass('current');
+                            _cur.after(_view);
 
-                                window.scrollTo(0, 0);
-                                that.superthis.slider.slidePage(_view);
-                                callback && callback.call(this, handler);
-                            },
+                            window.scrollTo(0, 0);
+                            that.superthis.slider.slidePage(_view);
+                            callback && callback.call(this, handler);
+                        },
 
-                            complete: function() {}
-                        });
-
-                        that.superthis.io.on('end', function() {
-                            // 
-                        });
-
+                        complete: function() {}
                     });
-                }
+
+                    that.superthis.io.on('end', function() {
+                        // 
+                    });
+
+                });
             };
 
             Events.mixTo(view);
@@ -114,13 +112,14 @@
 
 (function() {
 
-    jtouch.io = function() {
+    jtouch.io = function(superthis) {
         this.init.apply(this, arguments);
     };
 
     jtouch.io.prototype = {
-        init: function() {
+        init: function(superthis) {
             this.queue = {};
+            this.superthis = superthis;
             Events.mixTo(this);
         },
 

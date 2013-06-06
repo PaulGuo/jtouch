@@ -48,8 +48,12 @@
         //this.reflush();
     });
 
-    ne.on('loading', function() {
+    ne.io.on('loading', function() {
         console.log('loading');
+    });
+
+    ne.io.on('end', function() {
+        console.log('end');
     });
 
     // 初始化路由
